@@ -19,8 +19,8 @@ public class TableController {
     @GetMapping("dynamic_table")
     public String dynamic_table(Model model){
         //表格内容动态遍历
-        List<User> users = Arrays.asList(new User("david", "12345"), new User("Alice", "12345"),
-                new User("Jade", "12345"), new User("Zoe", "12345"));
+        List<User> users = Arrays.asList(new User(1,"david", "12345"), new User(2, "Alice", "12345"),
+                new User(3, "Jade", "12345"), new User(4, "Zoe", "12345"));
         model.addAttribute("users", users);
         return "table/dynamic_table";
     }

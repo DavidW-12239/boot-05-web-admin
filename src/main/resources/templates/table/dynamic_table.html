@@ -271,6 +271,7 @@
         <tbody>
         <tr class="gradeX" th:each="user,stats:${users}">
             <td th:text="${stats.count}">Trident</td>
+            <td th:text="${user.id}">Internet</td>
             <td th:text="${user.userName}">Internet</td>
             <td >[[${user.password}]]</td>
         </tr>

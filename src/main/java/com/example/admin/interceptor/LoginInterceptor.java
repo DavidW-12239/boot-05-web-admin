@@ -28,6 +28,9 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
         }
         else {
+            //未登录需跳转登陆页面
+            request.setAttribute("msg", "login first!");
+            request.getRequestDispatcher("/").forward(request, response);
             return false;
         }
     }
