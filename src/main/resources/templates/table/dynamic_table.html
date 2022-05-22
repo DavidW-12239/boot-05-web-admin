@@ -263,17 +263,21 @@
         <table  class="display table table-bordered table-striped" id="dynamic-table">
         <thead>
         <tr>
-            <th>#</th>
+            <th>ID</th>
             <th>User</th>
             <th>Password(s)</th>
         </tr>
         </thead>
         <tbody>
-        <tr class="gradeX" th:each="user,stats:${users}">
-            <td th:text="${stats.count}">Trident</td>
-            <td th:text="${user.id}">Internet</td>
-            <td th:text="${user.userName}">Internet</td>
+        <tr class="gradeX" th:each="user:${users}">
+            <td th:text="${user.id}">UserId
+            </td>
+            <td th:text="${user.username}">Name</td>
             <td >[[${user.password}]]</td>
+            <td>
+                <a th:href="@{/user/delete/{id}(id=${user.id})}" class="btn" type="button">Delete</button></a>
+            </td>
+
         </tr>
 
 
@@ -306,7 +310,7 @@
 <script type="text/javascript" language="javascript" src="js/advanced-datatable/js/jquery.dataTables.js"></script>
 <script type="text/javascript" src="js/data-tables/DT_bootstrap.js"></script>
 <!--dynamic table initialization -->
-<script src="js/dynamic_table_init.js"></script>
+<!--<script src="js/dynamic_table_init.js"></script>-->
 
 
 </body>
